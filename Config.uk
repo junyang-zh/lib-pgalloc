@@ -1,0 +1,10 @@
+# Invisible option that is used to detect
+# if LIBPGALLOC is availbale for configuration
+config LIBPGALLOC_INCLUDED
+	   bool
+	   default y
+
+menuconfig LIBPGALLOC
+	   bool "pgalloc"
+	   select LIBUKALLOC_IFMALLOC
+	   default n
