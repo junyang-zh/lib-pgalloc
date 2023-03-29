@@ -6,7 +6,7 @@ $(eval $(call addlib_s,libpgalloc,$(CONFIG_LIBPGALLOC)))
 ################################################################################
 # Library includes
 ################################################################################
-CINCLUDES-$(CONFIG_LIBPGALLOC) += -I$(LIBPGALLOC_BASE)     \
+CINCLUDES-$(CONFIG_LIBPGALLOC) += -I$(LIBPGALLOC_BASE)/tlsf     \
                                 -I$(LIBPGALLOC_BASE)/include
 
 ################################################################################
@@ -17,5 +17,5 @@ CINCLUDES-$(CONFIG_LIBPGALLOC) += -I$(LIBPGALLOC_BASE)     \
 ################################################################################
 # Sources
 ################################################################################
-LIBPGALLOC_SRCS-y += $(LIBPGALLOC_BASE)/src/pgalloc.c
-LIBPGALLOC_SRCS-y += $(LIBPGALLOC_BASE)/src/bbuddy_arena.c
+LIBPGALLOC_SRCS-y += $(LIBPGALLOC_BASE)/src/pgalloc.c \
+                    $(LIBPGALLOC_BASE)/src/tlsf.c
